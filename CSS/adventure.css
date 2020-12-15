@@ -1,0 +1,56 @@
+/* Fonts */
+@font-face {
+    font-family: "violet wasteland";
+    src: url("Violet Wasteland.otf");
+}
+
+@font-face {
+    font-family: "kalam";
+    src: url("Kalam-Regular.ttf");
+}
+
+@font-face {
+    font-family: "manticore";
+    src: url("Manticore.ttf");
+}
+/*Fonts*/
+
+/*Layout*/
+* {
+    color: white;
+}
+body {
+    background-color: #1a1a1a;
+    overflow: hidden;
+}
+/*Layout*/
+
+/*Text*/
+h1 {
+    font-family: "manticore";
+    transition: all 0.2s ease-in;
+    cursor: default;
+}
+
+h1:hover, #description:hover, button:hover {
+    color: #dce13c;
+    text-shadow:0px 0px 30px #48e13c;
+    transition: all 0.2s ease-in;
+    cursor: default;    
+}
+
+#description {
+    font-family: "kalam";
+    transition: all 0.2s ease-in;
+    cursor: default;
+}
+/*Text*/
+
+/*Buttons*/
+button {
+    font-family: "manticore";
+    background-color: transparent;
+    border: none;
+    text-align: center;
+}
+/*Buttons*/
