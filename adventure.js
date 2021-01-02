@@ -19,6 +19,7 @@ var div = document.getElementById('game-container');
 //Div
 
 //Title screen
+var background = document.getElementById('game-container');
 document.getElementById('game-container').onload = mainScreen();
 function mainScreen() {
     div.style.border = "none";
@@ -27,6 +28,8 @@ function mainScreen() {
     btn2.style.display = "none";
     btn3.style.display = "none";
     
+    document.body.style.backgroundImage = "url('images/bg_start1.jpg')";
+    document.body.style.backgroundSize = "cover";
 
     invItem.style.display = "none";
 
@@ -54,11 +57,11 @@ function mainMenu() {
     btn2.style.display = "block";
     btn2.innerHTML = "How to play";
     btn2.style.fontSize = "50px";
-    btn2.style.margin = "2% 29.5% 2% 41%";
+    btn2.style.margin = "2% 29.5% 2% 40%";
     btn3.style.display = "block";
     btn3.innerHTML = "Credits";
     btn3.style.fontSize = "50px";
-    btn3.style.margin = "0 29.5% 0 45%";
+    btn3.style.margin = "2% 29.5% 0 45%";
 
     title.innerText = "Unknown";
     title.style.fontSize = "120px";
@@ -83,10 +86,15 @@ function startGame() {
     div.style.height = "630px";
 
     btn1.style.display = "block";
+    btn1.style.position = "absolute";
     btn1.innerHTML = "Back";
     btn1.style.fontSize = "35px";
-    btn1.style.margin = "23% 2%";
-    btn2.style.display = "none";
+    btn1.style.margin = "0 0 0 2%";
+    btn2.style.display = "block";
+    btn2.style.position = "relative";
+    btn2.innerHTML = "Continue";
+    btn2.style.fontSize = "35px";
+    btn2.style.margin = "auto";
     btn3.style.display = "none";
 
     title.innerText = "Prologue..";
@@ -97,6 +105,7 @@ function startGame() {
     desc.style.display = "block";
     desc.style.textAlign = "center";
     desc.style.margin = "14% 0px";
+    desc.style.padding = "0 2% 5% 2%";
     desc.innerText = "In the beginning of time there was light and darkness, life and death. Two beings with just one simple purpose. ";
     
     btn1.addEventListener("click", function() {
