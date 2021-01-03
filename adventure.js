@@ -25,44 +25,49 @@ var div = document.getElementById('game-container');
 document.getElementById('game-container').onload = mainScreen();
 function mainScreen() {
     div.style.border = "none";
+    
+    title.innerText = "Unknown";
+    title.style.display = "block";
+    title.style.fontSize = "200px";
+    title.style.margin = "14% 16%";
+    title.style.textAlign = "center";
 
+    title.removeEventListener("click", mainScreen);
+    title.addEventListener("click", mainMenu);
+    
     btn1.style.display = "none";
     btn2.style.display = "none";
     btn3.style.display = "none";
 
     invItem.style.display = "none";
-
-    title.innerText = "Unknown";
-    title.style.fontSize = "200px";
-    title.style.margin = "14% 16%";
-    title.style.textAlign = "center";
-
     desc.style.display = "none";
-
-    title.removeEventListener("click", mainScreen);
-    title.addEventListener("click", mainMenu);
 };
 //Title screen
 
 //Main menu
 function mainMenu() {
     div.style.border = "none";
+    desc.style.display = "none";
 
+    btn1.style.fontSize = "50px";
     btn1.style.display = "block";
     btn1.style.position = "static";
-    btn1.innerHTML = "Start";
-    btn1.style.fontSize = "50px";
-    btn1.style.margin = "2% 29.5% 0 45%";
 
-    btn2.style.display = "block";
-    btn2.innerHTML = "How to play";
     btn2.style.fontSize = "50px";
-    btn2.style.margin = "2% 29.5% 2% 40%";
+    btn2.style.display = "block";
+    btn2.style.position = "static";
 
+    btn3.style.fontSize = "50px";
     btn3.style.display = "block";
     btn3.style.position = "static";
+    
+    btn1.innerHTML = "Start"; 
+    btn1.style.margin = "2% 29.5% 0 45%";
+
+    btn2.innerHTML = "How to play";
+    btn2.style.margin = "2% 29.5% 2% 40%";
+
     btn3.innerHTML = "Credits";
-    btn3.style.fontSize = "50px";
     btn3.style.margin = "2% 29.5% 0 45%";
     btn3.style.float = "none";
 
@@ -70,8 +75,7 @@ function mainMenu() {
     title.style.fontSize = "120px";
     title.style.margin = "2%";
     title.style.textAlign = "center";
-
-    desc.style.display = "none";
+  
 //Event Remover
     title.removeEventListener("click", mainMenu);
 
@@ -172,10 +176,6 @@ function ep1No() {
     btn2.addEventListener("click", ep1Yes2);
     btn3.addEventListener("click", ep1No2);
 };
-function ep1Yes2() {
-    desc.innerText = "";
-    desc.appendChild(pic);
-};
 function ep1No2() {
     btn1.style.display = "none";
     btn2.style.display = "none";
@@ -188,4 +188,32 @@ function ep1No2() {
     title.style.textAlign = "center";
     title.style.margin = "15% 0 0 0";
 };
+function ep1Yes2() {
+    desc.innerText = "Commander Maxon: Let us get straight to the task. A few days ago we have spotted about a dozen unknown vessels entering a nearby star system, we need you to investigate one of the vessels.";
+    desc.appendChild(pic);
+    desc.style.padding = "0px";
+    desc.style.margin = "4% 0% 6%";
+    
+    btn2.style.display = "block";
+    btn2.innerHTML = "Continue";
+    btn2.style.margin = "0 auto";
+
+    btn3.style.display = "none";
+
+    btn2.removeEventListener("click", ep1Yes2);
+    btn2.addEventListener("click", ep2);
+};
 //Episode 1
+
+//Episode 2
+function ep2() {
+    title.innerText = "Lock N' Load";
+    desc.innerText = "";
+    desc.style.margin = "4% 0% 2%";
+    desc.appendChild(pic);
+    pic.src = "img/ep2.jpg";
+    pic.style.width = "50%";
+
+    btn2.removeEventListener("click", ep2);
+};
+//Episode 2
